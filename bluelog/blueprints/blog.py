@@ -45,6 +45,11 @@ def show_category(category_id):
 @blog_bp.route('/post/<int:post_id>', methods=['GET', 'POST'])
 def show_post(post_id):
     post = Post.query.get_or_404(post_id)
+    if post.views is None:
+        post.views = 0
+        current_app.logger.info( request.remote_addr + ' :First View:' + str(post.id) +str(post.title))
+    post.views = post.views +1
+    db.session.commit()
     current_app.logger.info( request.remote_addr + ' :访问文章:' + str(post.id) +str(post.title))
     page = request.args.get('page', 1, type=int)
     per_page = current_app.config['BLUELOG_COMMENT_PER_PAGE']

@@ -22,6 +22,7 @@
         <small>
             Category: <a
                 href="{{ url_for('.show_category', category_id=post.category.id) }}">{{ post.category.name }}</a><br>
+            Views: {{ post.views }} <br>
             Date: {{ moment(post.timestamp).format('LL') }}
         </small>
     </div>
