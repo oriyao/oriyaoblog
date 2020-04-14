@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
     :author: Grey Li (李辉)
+    :Modify: oriyao
     :url: http://greyli.com
     :copyright: © 2018 Grey Li <withlihui@gmail.com>
     :license: MIT, see LICENSE for more details.
@@ -20,6 +21,9 @@ else:
 
 class BaseConfig(object):
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev key')
+    
+    # Bootstrap调用本地文件
+    BOOTSTRAP_SERVE_LOCAL = True
 
     # Flask-DebugToolbar 调试
     DEBUG_TB_INTERCEPT_REDIRECTS = False
