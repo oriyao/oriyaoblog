@@ -257,3 +257,14 @@ def upload_image():
     f.save(os.path.join(current_app.config['BLUELOG_UPLOAD_PATH'], f.filename))
     url = url_for('.get_image', filename=f.filename)
     return upload_success(url, f.filename)
+
+# 日志显示路由
+@admin_bp.route('/showlogs')
+@login_required
+def show_logs():
+    filename = current_app.config['LOGPATH']
+    current_app.logger.info('Show Logs : ' + str(filename))
+    f = open(filename, "r")
+    lines = f.readlines()
+    f.close()
+    return render_template('admin/showlogs.html', logs=lines)
