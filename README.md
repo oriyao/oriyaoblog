@@ -38,3 +38,12 @@ $ pipenv install --dev --pypi-mirror https://mirrors.aliyun.com/pypi/simple
 
 This project is licensed under the MIT License (see the
 [LICENSE](LICENSE) file for details).
+
+# TODO
+NAS整理：照片、文件
+ob同步整理
+ucloud修复
+paperwhite整理
+NS升级：八方旅人2
+SD热点升级：禁闭求生、房产达人
+PS二挡试玩
